@@ -3,19 +3,74 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace KyyhkysJussi
 {
-    public class Huone //Anni
+    public class Huone //Anni, Henni
     {
         string huoneenNimi;
+        string huoneenKuvaus;
+        public List<Tavara> huoneenTavarat { get; set; }
+        public List<Sanat> avainSanat { get; set; }
 
-        public Huone(string huoneenNimi)
+
+        public Huone(string huoneenKuvaus)
         {
-            this.huoneenNimi = huoneenNimi;
-            List<Tavara> huoneenTavarat = new List<Tavara>();
+            this.huoneenKuvaus = huoneenKuvaus;
+            huoneenTavarat = new List<Tavara>();
+            avainSanat = new List<Sanat>();
         }
-        public Huone lähtöruutuun = new Huone("lähtöruutu");
-        public Huone itään = new Huone("itä");
+
+        Huone huone1 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone1.txt"))
+        {
+            huoneenTavarat = new List<Tavara>()
+            {
+                new Tavara("Vasara"),
+                new Tavara("Kirves")
+            },
+            avainSanat = new List<Sanat>()
+            {
+            new Sanat("Ikkuna"),
+            new Sanat("Pöytä")
+            }
+        };
+       
+        Huone huone2 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone2.txt"));
+
+        Huone huone3 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone3.txt"));
+
+        Huone huone4 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone4.txt"));
+
+        Huone huone5 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone5.txt"));
+
+        Huone huone6 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone6.txt"));
+
+        Huone huone7 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone7.txt"));
+
+        Huone huone8 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone8.txt"));
+
+        Huone huone9 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone9.txt"));
+
+        Huone huone10 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone10.txt"));
+
+        Huone huone11 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone11.txt"));
+
+        Huone huone12 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone12.txt"));
+
+        Huone huone13 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone13.txt"));
+
+        Huone huone14 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone14.txt"));
+
+        Huone huone15 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone15.txt"));
+
+        Huone huone16 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone16.txt"));
+
+        Huone salahuone = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Salahuone.txt"));
+
+        Huone tulimeri = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Tulimeri.txt"));
+
+        
+
     }
 }
