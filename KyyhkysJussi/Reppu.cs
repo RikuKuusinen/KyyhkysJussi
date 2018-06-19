@@ -18,7 +18,10 @@ namespace KyyhkysJussi
         {
             tavarat.Add(t);
         }
-        
+        public void PoistaTavara(Tavara t)
+        {
+            tavarat.Remove(t);
+        }
        
 
     }
