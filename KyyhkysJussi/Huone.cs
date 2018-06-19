@@ -18,6 +18,8 @@ namespace KyyhkysJussi
         public List<Sanat> avainSanat { get; set; }
 
 
+
+
         public Huone(string huoneenKuvaus)
         {
             this.HuoneenKuvaus = huoneenKuvaus;
@@ -25,19 +27,19 @@ namespace KyyhkysJussi
             avainSanat = new List<Sanat>();
         }
 
-        //Huone huone1 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone1.txt"))
-        //{
-        //    huoneenTavarat = new List<Tavara>()
-        //    {
-        //        new Tavara("Vasara"),
-        //        new Tavara("Kirves")
-        //    },
-        //    avainSanat = new List<Sanat>()
-        //    {
-        //    new Sanat("Ikkuna"),
-        //    new Sanat("Pöytä")
-        //    }
-        //};
+        Huone huone1 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone1.txt"))
+        {
+            huoneenTavarat = new List<Tavara>()
+            {
+                new Tavara("Vasara"),
+                new Tavara("Kirves")
+            },
+            avainSanat = new List<Sanat>()
+            {
+            new Sanat("Ikkuna"),
+            new Sanat("Pöytä")
+            }
+        };
        
         //Huone huone2 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone2.txt"));
 
@@ -69,12 +71,12 @@ namespace KyyhkysJussi
 
         //Huone huone16 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone16.txt"));
 
-        //Huone salahuone = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Salahuone.txt"));
+        Huone salahuone = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Salahuone.txt"));
 
-        //Huone tulimeri = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Tulimeri.txt"));
+        Huone tulimeri = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Tulimeri.txt"));
 
 
-        //public Dictionary<string, string> openWith = new Dictionary<string, string>();
+        public Dictionary<string, string> openWith = new Dictionary<string, string>();
         string HuoneenNimi { get; set; }
         int huoneenNumero;
         public Huone(int huoneenNumero, string huoneenNimi)
@@ -88,10 +90,10 @@ namespace KyyhkysJussi
         {
             return huone.huoneenNumero;
         }
-       // Huone huone1 = new Huone(1, "eka huone");
-       // Dictionary<int, Huone> huoneita = new Dictionary<int, Huone>();
+        Huone huone1 = new Huone(1, "eka huone");
+        Dictionary<int, Huone> huoneita = new Dictionary<int, Huone>();
 
-        //openWith.Add("mo","i");
-        //huoneita.Add(1, huone1);
+        openWith.Add("mo","i");
+        huoneita.Add(1, huone1);
     }
 }
