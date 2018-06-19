@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarkistin", "Tarkistin\Tarkistin.csproj", "{B1FB8ED8-7ABD-4BEB-A4B5-B1054019F6ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarkistinTests", "TarkistinTests\TarkistinTests.csproj", "{BB04195D-5637-43FF-8E57-C39FD148B8DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1FB8ED8-7ABD-4BEB-A4B5-B1054019F6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FB8ED8-7ABD-4BEB-A4B5-B1054019F6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FB8ED8-7ABD-4BEB-A4B5-B1054019F6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FB8ED8-7ABD-4BEB-A4B5-B1054019F6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB04195D-5637-43FF-8E57-C39FD148B8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB04195D-5637-43FF-8E57-C39FD148B8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB04195D-5637-43FF-8E57-C39FD148B8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB04195D-5637-43FF-8E57-C39FD148B8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DA2C20B-6C5B-450D-B596-579B6A2363B7}
+	EndGlobalSection
+EndGlobal

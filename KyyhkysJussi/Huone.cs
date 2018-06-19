@@ -18,6 +18,8 @@ namespace KyyhkysJussi
         public List<Sanat> avainSanat { get; set; }
 
 
+
+
         public Huone(string huoneenKuvaus)
         {
             this.HuoneenKuvaus = huoneenKuvaus;
@@ -37,6 +39,9 @@ namespace KyyhkysJussi
             new Sanat("Ikkuna"),
             new Sanat("Pöytä")
             }
+
+
+
         };
        
         Huone huone2 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone2.txt"));
@@ -69,29 +74,29 @@ namespace KyyhkysJussi
 
         Huone huone16 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Huone16.txt"));
 
-        Huone salahuone = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Salahuone.txt"));
+        Huone huone999 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Salahuone.txt"));
 
-        Huone tulimeri = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Tulimeri.txt"));
+        Huone huone666 = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Tulimeri.txt"));
 
 
-        public Dictionary<string, string> openWith = new Dictionary<string, string>();
-        string HuoneenNimi { get; set; }
-        int huoneenNumero;
-        public Huone(int huoneenNumero, string huoneenNimi)
-        {
-            this.huoneenNumero = huoneenNumero;
-            HuoneenNimi = huoneenNimi;
-            List<Tavara> huoneenTavarat = new List<Tavara>();
-        }
+        //    public Dictionary<string, string> openWith = new Dictionary<string, string>();
+        //    string HuoneenNimi { get; set; }
+        //    int huoneenNumero;
+        //    public Huone(int huoneenNumero, string huoneenNimi)
+        //    {
+        //        this.huoneenNumero = huoneenNumero;
+        //        HuoneenNimi = huoneenNimi;
+        //        List<Tavara> huoneenTavarat = new List<Tavara>();
+        //    }
 
-        public int huoneNyt(Huone huone)
-        {
-            return huone.huoneenNumero;
-        }
-        Huone huone1 = new Huone(1, "eka huone");
-        Dictionary<int, Huone> huoneita = new Dictionary<int, Huone>();
+        //    public int huoneNyt(Huone huone)
+        //    {
+        //        return huone.huoneenNumero;
+        //    }
+        //    Huone huone1 = new Huone(1, "eka huone");
+        //    Dictionary<int, Huone> huoneita = new Dictionary<int, Huone>();
 
-        openWith.Add("mo","i");
-        huoneita.Add(1, huone1);
+        //    openWith.Add("mo","i");
+        //    huoneita.Add(1, huone1);
     }
 }

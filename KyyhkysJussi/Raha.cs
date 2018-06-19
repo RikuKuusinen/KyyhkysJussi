@@ -20,17 +20,17 @@ namespace KyyhkysJussi
         }
         //Tällä metodilla muutetaan rahan arvoa pelin edetessä ja tätä metodia kutsutaan Reppu-luokasta
 
-        public int naytaRaha(int luku)
+        public int vahennaRaha(int luku)
         {
-            if (luku < 1)
-            {
-                return raha + luku;
-            }
-            else
-            {
-                return raha - luku;
-            }
+            return raha + luku;
         }
-
+        public int lisaaRaha (int luku)
+        {
+            return raha - luku;
+        }
+        public override string ToString()
+        {
+            return "Sinulla on: " + raha.ToString() ;
+        }
     }
 }
