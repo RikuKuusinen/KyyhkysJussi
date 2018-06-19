@@ -8,12 +8,14 @@ namespace KyyhkysJussi
 {
     class Program
     {
+        public static UI Peli { get; set; }
         static void Main(string[] args)
         {
-            UI peli = new UI();
-            peli.AloitaPeli();
+            UI Peli = new UI();
+            Peli.AloitaPeli();
         }
 
+        
     }
     //Kutsutaan reppu-lista ja raha - naytaRaha-metodia 
 

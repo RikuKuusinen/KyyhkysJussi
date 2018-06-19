@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KyyhkysJussi
 {
-    public class Raha
+    public class Raha // Elli + Henni
     {
         //Tähän luokkaan luodaan rahan ominaisuudet, joita kutsutaan tarvittaessa mainissa.
 
@@ -18,19 +18,20 @@ namespace KyyhkysJussi
         {
             this.raha = raha;
         }
-        //Tällä metodilla muutetaan rahan arvoa pelin edetessä ja tätä metodia kutsutaan Reppu-luokasta
+        //Näillä metodeilla muutetaan rahan arvoa pelin edetessä 
 
-        public int vahennaRaha(int luku)
+        public int VahennaRaha(int luku)
         {
             return raha + luku;
         }
-        public int lisaaRaha (int luku)
+        public int LisaaRaha (int luku)
         {
             return raha - luku;
         }
-        public override string ToString()
+        // Tätä metodia kutsutaan Reppu-luokasta
+        public void NaytaRaha()
         {
-            return "Sinulla on: " + raha.ToString() ;
+           Console.WriteLine("$Sinulla on: {0} rahakolikkoa",raha);
         }
     }
 }

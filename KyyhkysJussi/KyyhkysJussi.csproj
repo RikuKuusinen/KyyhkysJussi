@@ -63,26 +63,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Huone1.txt" />
-    <Content Include="Huone10.txt" />
-    <Content Include="Huone11.txt" />
-    <Content Include="Huone12.txt" />
-    <Content Include="Huone13.txt" />
-    <Content Include="Huone14.txt" />
-    <Content Include="Huone15.txt" />
-    <Content Include="Huone16.txt" />
-    <Content Include="Huone17.txt" />
-    <Content Include="Huone2.txt" />
-    <Content Include="Huone3.txt" />
-    <Content Include="Huone4.txt" />
-    <Content Include="Huone5.txt" />
-    <Content Include="Huone6.txt" />
-    <Content Include="Huone7.txt" />
-    <Content Include="Huone8.txt" />
-    <Content Include="Huone9.txt" />
-    <Content Include="Salahuone.txt" />
-    <Content Include="Tulimeri.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

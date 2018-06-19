@@ -7,22 +7,10 @@ using System.Threading.Tasks;
 
 namespace KyyhkysJussi
 {
-    class Reppu 
+    class Reppu //Elli + Henni
     {
-        //Tähän luodaan reppu, jonka ominaisuuksiin kuuluu lisätä, säilyttää ja luovuttaa tavaroita.
-        //Tehdään lista, johon tulee (objekti) tavaroita. Repussa on myös rahaa, joka on int.
-
-        public List<Tavara> tavarat = new List <Tavara>();
-
-        public void LisaaTavara(Tavara t)
-        {
-            tavarat.Add(t);
-        }
-        public void PoistaTavara(Tavara t)
-        {
-            tavarat.Remove(t);
-        }
+        
        
-
+        
     }
 }
