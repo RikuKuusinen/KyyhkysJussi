@@ -10,10 +10,11 @@ namespace KyyhkysJussi
     {
         static void Main(string[] args)
         {
-            
-
-            //Kutsutaan reppu-lista ja raha - naytaRaha-metodia 
-
+            UI peli = new UI();
+            peli.AloitaPeli();
         }
+
     }
+    //Kutsutaan reppu-lista ja raha - naytaRaha-metodia 
+
 }

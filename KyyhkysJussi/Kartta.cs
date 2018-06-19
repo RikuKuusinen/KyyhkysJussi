@@ -22,8 +22,8 @@ namespace KyyhkysJussi
         // Huone[,] kartta = new Huone[1, 2];
         Kartta[,] maailma = new Kartta[1, 2];
 
-        maailma[0,0]= lähtöruutuun;
-        maailma[0,1]=itään;
+        //maailma[0,0]= lähtöruutuun;
+        //maailma[0,1]=itään;
          
     }
 }

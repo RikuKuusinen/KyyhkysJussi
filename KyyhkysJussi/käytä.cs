@@ -12,4 +12,4 @@ namespace KyyhkysJussi
     }
     // hyödynnä avainsanaa ja esineen sanaa yhdessä
 }
-}
+

@@ -8,8 +8,9 @@ namespace KyyhkysJussi
 {
     class mene
     { 
-        public void liiku(int huone)
+        public void liiku(Huone huone)
         {
+            //TämäHuone = huone;
             //miten järkevästi accessoida huoneen tekstit 
 
             //input haetaan varmaan tässä?
