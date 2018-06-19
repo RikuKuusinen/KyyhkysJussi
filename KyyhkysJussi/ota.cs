@@ -8,5 +8,11 @@ namespace KyyhkysJussi
 {
     class ota
     {
+        
+        // lisää tavara reppuun 
+        
+        // tavara pois huoneen listasta
+
+        
     }
 }

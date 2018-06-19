@@ -8,5 +8,8 @@ namespace KyyhkysJussi
 {
     class käytä
     {
+      
     }
+    // hyödynnä avainsanaa ja esineen sanaa yhdessä
+}
 }

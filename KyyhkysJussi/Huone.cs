@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 using System.IO;
 
 namespace KyyhkysJussi
+
+
+
 {
     public class Huone //Anni, Henni
     {
         string huoneenNimi;
-        string huoneenKuvaus;
+        public string HuoneenKuvaus;
         public List<Tavara> huoneenTavarat { get; set; }
         public List<Sanat> avainSanat { get; set; }
 
 
         public Huone(string huoneenKuvaus)
         {
-            this.huoneenKuvaus = huoneenKuvaus;
+            this.HuoneenKuvaus = huoneenKuvaus;
             huoneenTavarat = new List<Tavara>();
             avainSanat = new List<Sanat>();
         }
@@ -70,7 +73,25 @@ namespace KyyhkysJussi
 
         Huone tulimeri = new Huone(File.ReadAllText(@"C:\work\Academy\Tehtävät\Viikko4\KyyhkysJussi-master\KyyhkysJussi\Tulimeri.txt"));
 
-        
 
+        public Dictionary<string, string> openWith = new Dictionary<string, string>();
+        string HuoneenNimi { get; set; }
+        int huoneenNumero;
+        public Huone(int huoneenNumero, string huoneenNimi)
+        {
+            this.huoneenNumero = huoneenNumero;
+            HuoneenNimi = huoneenNimi;
+            List<Tavara> huoneenTavarat = new List<Tavara>();
+        }
+
+        public int huoneNyt(Huone huone)
+        {
+            return huone.huoneenNumero;
+        }
+        Huone huone1 = new Huone(1, "eka huone");
+        Dictionary<int, Huone> huoneita = new Dictionary<int, Huone>();
+
+        openWith.Add("mo","i");
+        huoneita.Add(1, huone1);
     }
 }

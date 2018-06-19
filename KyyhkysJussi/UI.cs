@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace KyyhkysJussi
         // parse - millä kaikella tunnistaa
         // help - komentojen tuki
         public Hahmo Pelaaja = new Hahmo("kikki", "kikki", "kikki");
+        public bool PelaajaElossa = true;
+
+
         public void AloitaPeli()
         {
 
@@ -76,7 +80,20 @@ namespace KyyhkysJussi
             Console.ReadKey();
             Console.Clear();
 
+            Etene();
         }
-
+        
+            
+        public void Etene()
+        {
+            while (PelaajaElossa)
+            {
+                //anna huoneen tiedot
+                Console.WriteLine(TämäHuone.selite);
+                // user input
+                StringReader sr = new StringReader(Console.ReadLine()); // vai split ja vertaillaan avainsanoihin?
+                
+            }
+        }
     }
 }
