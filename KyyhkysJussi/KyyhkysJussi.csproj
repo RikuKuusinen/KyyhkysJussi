@@ -46,6 +46,7 @@
     <Compile Include="Hahmo.cs" />
     <Compile Include="Huone.cs" />
     <Compile Include="Kartta.cs" />
+    <Compile Include="KyyhkysJussi.cs" />
     <Compile Include="käytä.cs" />
     <Compile Include="loitsi.cs" />
     <Compile Include="lyö.cs" />

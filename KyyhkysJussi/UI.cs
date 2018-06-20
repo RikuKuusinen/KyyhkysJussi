@@ -17,21 +17,26 @@ namespace KyyhkysJussi
         // parse - millä kaikella tunnistaa
         // help - komentojen tuki
         Random rnd = new Random();
-        public Hahmo Pelaaja;
+        public static Hahmo Pelaaja { get; set; }
         public bool PelaajaElossa;
         public Huone TämäHuone { get; set; }
         public Kartta kartta { get; set; }
         internal string[] UserInput;
+        
+        
         //public mene liike { get; set; }
         public bool mattopiiskaOtettu = false;
         public bool luuOtettu = false;
         public bool lentävämattoOtettu = false;
-        public bool kyyhkynenElossa = true;
+        public bool kyyhkynenElossa { get; set; }
         public bool luurankoTalossa = false;
         public bool sormusOtettu = false;
         public bool kelloOtettu = false;
+        KyyhkysJussi Kyyhky = new KyyhkysJussi();
+
         public UI()
         {
+            kyyhkynenElossa = true;
             kartta = new Kartta();
             kartta.TeeHuoneLista();
             Pelaaja = new Hahmo("kikki", "kikki", "kikki");
@@ -53,7 +58,8 @@ namespace KyyhkysJussi
             Console.WriteLine("Minkäs rotuinen seikkailijasi on?\n1. Ihminen\n2. Örkki\n3. Haltia");
             Int32.TryParse(Console.ReadLine(), out _rotu);
             Console.WriteLine("Milläs sukuliittimillä toivoisit seikkailijasi olevan varustettu? m/n/eos");
-            _sukupuoli = Console.ReadLine();
+            _sukupuoli = Console.ReadLine().ToLower().Trim(' ', ',', '.','-','<','>','1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+',);
+            if (_sukupuoli != "m" || _sukupuoli != "f" || _sukupuoli != "eos" || _sukupuoli != "z")
             switch (_rotu)
             {
                 case 1:
@@ -80,7 +86,7 @@ namespace KyyhkysJussi
                 case "n":
                     sukupuoli = "Nainen";
                     break;
-                case "x":
+                case "eos":
                     sukupuoli = "Eos";
                     break;
                 case "z":
@@ -127,6 +133,8 @@ namespace KyyhkysJussi
 
         public void Peli()
         {
+            kartta.Huoneet[13].HuoneenKuvaus = "13 Sieraimiisi sulloutuvat suunnattomat sulotuoksut. Mökissä leipuriörkki Tomppiina vääntää torttua virne naamallaan. Tomppiina toteaa tomerasti, \"Terve, " + UI.Pelaaja.Nimi + "!\" Pullaa paistuu uunissa Pohjoiseen päin avautuu komia niitty, jossa näkyy jonkunlaista liikettä";
+
             while (PelaajaElossa)
             {
                 //anna huoneen tiedot
