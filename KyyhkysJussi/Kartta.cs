@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KyyhkysJussi
 {
-    public class Kartta //Anni
+    public class Kartta //Anni, Henni
     {
         // Tehdään lista huoneista
 
@@ -39,12 +39,12 @@ namespace KyyhkysJussi
                 + ", kumpareen ja kumpareella seisovan ison puun. Puun oksalla näkyy liikettä. Etelässä näet kiviaidan, jonka takana vilahtaa"
                 + " sateenkaari. Idässä loimuaa liekkimeri. Lännessä näet lehmänhäntien huisketta.",
             "9 Olet niityllä ja näet ison fasaanin, joka tuijottaa sinua isoilla silmillään. Pohjoisessa näet korkean lauta-aidan. Etelässä"
-                + " näet leipurin talon, jonka ikkunassa leipuri naputtaa kauhalla kämmeneensä. Lännessä näet ruohikkoisen aukean, jonka keskellä"
-                + " kiemurtelee polku. Idässä loimuaa liekkimeri.",
+                + " näet leipurin talon, jonka ikkunassa leipuri naputtaa kauhalla kämmeneensä. Idässä näet ruohikkoisen aukean, jonka keskellä"
+                + " kiemurtelee polku. Lännessä loimuaa liekkimeri.",
             "10 Olet ruohikkoisella niityllä, jonka keskellä kiemurtelee pieni polku. Polku jatkuu pohjoiseen ja etelään. Idässä näet talosi. Lännessä on komia niitty. Niityllä näyttäisi olevan jonkinlaista liikettä, mutta et oikein erota mikä siellä oikein mäyryää.",
-            "11 Olet huoneessa, jossa on pöytä jolla on silinterihattu. Pöydän alla lojuu ruostunut avain. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovesi, jossa on komea koirajuliste.",
-            "12 Kiviaitojen välissä sijaitsee sopivankokoinen laitumen, jolla tepastelee yksisarvinen. Pohjoiseen päin näet kiviaidan. Lännessä on mökkisi seinä. Idässä oikein kaunis ranta, josta pääsee helposti pulahtamaan liekkimereen halutessaan. Etelään päin näet kulahtaneen kiviaiden ja taivaalla synkkiä pilviä parkkeerattuna taivahalle.",
-            "13 Sieraimiisi sulloutuvat suunnattomat sulotuoksut. Mökissä leipuriörkki Tomppiina vääntää torttua virne naamallaan. Tomppiina toteaa tomerasti, \"Terve!\" Pullaa paistuu uunissa Pohjoiseen päin avautuu komia niitty, jossa näkyy jonkunlaista liikettä",
+            "11 Olet huoneessa, jossa on pöytä jolla on silinterihattu. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovi, jossa on komea koirajuliste.",
+            "12 Kiviaitojen välissä sijaitsee sopivankokoinen laitumen, jolla tepastelee kaunis pinkin- ja sateenkaarenkirjava yksisarvinen. Pohjoiseen päin näet kiviaidan. Lännessä on mökkisi seinä. Idässä oikein kaunis ranta, josta pääsee helposti pulahtamaan liekkimereen halutessaan. Etelään päin näet kulahtaneen kiviaiden ja taivaalla synkkiä pilviä parkkeerattuna taivahalle.",
+            "13 Sieraimiisi sulloutuvat suunnattomat sulotuoksut. Mökissä leipuriörkki Okssu vääntää torttua virne naamallaan. Okssu toteaa tomerasti, \"Terve!\" Pullaa paistuu uunissa. Pohjoisseinän ikkunasta avautuu komia niitty, jossa näkyy jonkunlaista liikettä. Itä- ja eteläikkunoista näkyy liekkimeren roihu.",
             "14 Polun risteyksessä on kookkaita kiviä ja pari mäntyä. Polku haarautuu, lännessäpäin on leipurin mökki. Sen piipusta puksuu vienoa sauhua tasaisena virtauksena. Itäänpäin polulla näyttäisi kököttelevän lohikäärme haistelemassa tuulia. Pohjoiseen päin polku jatkuu niitylle ja siitä eteenpäin näkymättömiin. Etelän suunnalla liekkimeri.",
             "15 Etupihallasi on lohikäärme. Se katselee mitä puuhaat. Kevyt pakokauhu paukahtelee pakaroissasi lohikäärmeen katseen alla. Toivot sisimmässäsi, että muistaisit loitsun, jolla lohikäärmeen saisi muutettua mukavammaksi elukaksi. Pohjoiseen päin katsahtaessasi havaitset tutunnäköisen mökin seinän ja kotiovesi. Länteenpäin vie polku mukavahkon näköiselle niitylle. Idässä häämöttävät synkät pilvet ja kivimuuri, jossa on portti. Etelässäpäin liehuu liekkimeri, et tunne suurta vetoa sinne.",
             "16 Taivaalla juuri tällä kohdalla on varsin synkkiä pilviä. Karut koivut muodostavat käytävän, jonka reunoilla on hautakiviä. Edessäsi maassa töröttää puolittain esillä oleva reisiluu. Pohjoisessa näet kiviaidan, jonka taa ei nää kovin hyvin. Lännessä on hautausmaan portti, jonka takaa erotat lohikäärmeisiä muotoja. Idässä näet kiviaidan, jonka takana loimottelee lämmin liekkimeri. Etelässäkin näet kiviaidan, jonka takana loimottelee lämmin liekkimeri.",

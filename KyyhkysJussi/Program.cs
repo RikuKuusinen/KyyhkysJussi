@@ -17,6 +17,6 @@ namespace KyyhkysJussi
 
         
     }
-    //Kutsutaan reppu-lista ja raha - naytaRaha-metodia 
+    
 
 }
