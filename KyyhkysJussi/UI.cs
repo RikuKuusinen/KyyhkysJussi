@@ -58,8 +58,9 @@ namespace KyyhkysJussi
             Console.WriteLine("Minkäs rotuinen seikkailijasi on?\n1. Ihminen\n2. Örkki\n3. Haltia");
             Int32.TryParse(Console.ReadLine(), out _rotu);
             Console.WriteLine("Milläs sukuliittimillä toivoisit seikkailijasi olevan varustettu? m/n/eos");
-            _sukupuoli = Console.ReadLine().ToLower().Trim(' ', ',', '.','-','<','>','1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+',);
-            if (_sukupuoli != "m" || _sukupuoli != "f" || _sukupuoli != "eos" || _sukupuoli != "z")
+            _sukupuoli = Console.ReadLine().ToLower().Trim(' ', ',', '.','-','<','>','1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+');
+            //if (_sukupuoli != "m" || _sukupuoli != "f" || _sukupuoli != "eos" || _sukupuoli != "z")
+            
             switch (_rotu)
             {
                 case 1:
@@ -96,7 +97,7 @@ namespace KyyhkysJussi
                     sukupuoli = "Dönkkö";
                     break;
             }
-
+            
             Pelaaja.Nimi = _nimi;
             Pelaaja.Rotu = rotu;
             Pelaaja.Sukupuoli = sukupuoli;

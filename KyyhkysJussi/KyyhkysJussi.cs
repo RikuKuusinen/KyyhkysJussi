@@ -8,8 +8,8 @@ namespace KyyhkysJussi
 {
     class KyyhkysJussi
     {
-        public int Mielenterveys { get; set; };
-        public void KyyhkysJussi()
+        public int Mielenterveys { get; set; }
+        public KyyhkysJussi()
         {
             Mielenterveys = 5;
         }
