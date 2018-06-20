@@ -14,8 +14,8 @@ namespace KyyhkysJussi
         public KyyhkysJussi()
         {
             Mielenterveys = 5;
-            HaittaSanat = new List<string>() { "ruma", "okssu", "tyhmä", "pylly" };
-            HyötySanat = new string []{ "ihana", "mukava", "rakas", "kakka"};
+            HaittaSanat = new List<string>() { "ruma", "okssu", "tyhmä", "pylly", "error", "koodi", "huono", "koodisi", "pieru"};
+            HyötySanat = new string []{ "ihana", "mukava", "rakas", "kakka", "hyvä", "pulu", "kyyhky"};
         }
         public void LisääMielenterveyttä()
         {

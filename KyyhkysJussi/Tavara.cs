@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KyyhkysJussi
 {
-    public class Tavara
+    public class Tavara //Henni, Elli
     {
         //Repun sisältö (lista) koostuu Tavara-luokan olioista
         public string tavara;      

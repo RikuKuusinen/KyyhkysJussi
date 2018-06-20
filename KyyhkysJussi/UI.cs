@@ -40,11 +40,12 @@ namespace KyyhkysJussi
         public bool MattopiiskaAnnettu = false;
         public bool LihaOtettu = false;
         public bool onkoPäässäHattu = false;
+        public bool koiraJulisteAnnettu = false;
 
         // Mittaa sitä kuinka monta vuoroa on mennyt siitä, että fasaani on viimeksi piiloutunut, jos arvo on 3 Peli() muuttaa tekstin niin, että fasaani näkyy jälleen. 
         int FasaaniPiilossa = 3;
 
-        public UI()
+        public UI() //Jukka
         {
             kyyhkynenElossa = true;
             kartta = new Kartta();
@@ -55,7 +56,7 @@ namespace KyyhkysJussi
             //liike = new mene();
 
         }
-        public void AloitaPeli()
+        public void AloitaPeli() // Jukka
         {
             Console.WriteLine("Tervetuloa Kyyhkys-Jussin seikkailuun!\n");
             Helppi();
@@ -127,9 +128,9 @@ namespace KyyhkysJussi
         //Tähän luodaan reppu, jonka ominaisuuksiin kuuluu lisätä, säilyttää ja luovuttaa tavaroita.
         //Tehdään lista, johon tulee (objekti) tavaroita. Repussa on myös rahaa, joka on int.
 
-        public List<string> reppu = new List<string>();
+        public List<string> reppu = new List<string>(); // Elli
 
-        public void LisaaTavara(string t)
+        public void LisaaTavara(string t) //Elli
         {
             reppu.Add(t);
         }
@@ -145,12 +146,12 @@ namespace KyyhkysJussi
                 Console.WriteLine(i);
             }
         }
-        public void NimiMuutokset()
+        public void NimiMuutokset() // Jukka
         {
             kartta.Huoneet[13].HuoneenKuvaus = "13 Sieraimiisi sulloutuvat suunnattomat sulotuoksut. Mökissä leipuriörkki Okssu vääntää torttua virne naamallaan. Okssu toteaa tomerasti, \"Terve, " + UI.Pelaaja.Nimi + "!\" Pullaa paistuu uunissa Pohjoiseen päin avautuu komia niitty, jossa näkyy jonkunlaista liikettä";
 
         }
-        public void Liikuttu()
+        public void Liikuttu() // Jukka
         {
             LiikuttuBool = true;
             Console.WriteLine("Lähdet käpyttelemään.");
@@ -170,7 +171,7 @@ namespace KyyhkysJussi
         {
             while (PelaajaElossa)
             {
-            //seurataan fasaanin liikkeitä
+            //seurataan fasaanin liikkeitä - Jukka
             if (FasaaniPiilossa == 3)
                 {
                     kartta.Huoneet[9].HuoneenKuvaus = "9 Olet niityllä ja näet ison fasaanin, joka tuijottaa sinua isoilla silmillään. Pohjoisessa näet korkean lauta-aidan. Etelässä"
@@ -183,6 +184,33 @@ namespace KyyhkysJussi
                 {
                     //anna huoneen tiedot
                     Console.WriteLine(TämäHuone.HuoneenKuvaus);
+                    
+                    // jos hattu on päässä
+                    if (TämäHuone == kartta.Huoneet[13] && onkoPäässäHattu)
+                    {
+                        int numero = rnd.Next(1,5);
+                        if (numero == 1)
+                        { 
+                            Console.WriteLine("Okssu toteaa: \"Onpas sinulla hieno hattu!\"");
+                        }
+                        if (numero == 2)
+                        {
+                            Console.WriteLine("Okssu murisee: \"Oisipa mullakin noin hiano hattu.\"");
+                        }
+                        if (numero == 3)
+                        {
+                            Console.WriteLine("Okssu ihmettelee: \"Onko hattusi tehty siiselin sisuksista vai miksi se on noin siisti?\"");
+                        }
+                        if (numero == 4)
+                        {
+                            Console.WriteLine("Okssu parahtaa: \"Onpas sinulla ruma silinterihattu!\"");
+                        }
+                        if (numero == 5)
+                        {
+                            Console.WriteLine("Okssu huutaa: \"Onko tuo minun hattuni?!\"");
+                        }
+
+                    }
                     LiikuttuBool = false;
                 }
                 else 
@@ -198,7 +226,7 @@ namespace KyyhkysJussi
         }
         public void ParseInput(string[] vars)
         {
-            // Liikkumiskomennot
+            // Liikkumiskomennot - Anni
 
             if (vars[0] == "p" || vars[0] == "e" || vars[0] == "l" || vars[0] == "i")
             {
@@ -226,7 +254,7 @@ namespace KyyhkysJussi
                 LiikuHuoneista("p");
             }
 
-            // Reppukomennot
+            // Reppukomennot - Elli
             else if (vars[0] == "reppu")
             {
                 NaytaReppu();
@@ -236,7 +264,7 @@ namespace KyyhkysJussi
                 NaytaReppu();
             }
 
-            // kiipeämiskomento
+            // kiipeämiskomento - Jukka
             else if (vars[0] == "kiipeä" && vars[1] == "p" && TämäHuone == kartta.Huoneet[16])
             {
                 Console.WriteLine("Kiipeät rohkeasti aidan yli kohti uusia seikkailuja!");
@@ -252,111 +280,161 @@ namespace KyyhkysJussi
                 LiikuttuBool = true;
             }
 
-            // ottamiskomento ja huoneen tekstin muutos
+            // ottamiskomento ja huoneen tekstin muutos - Elli
             else if (TämäHuone == kartta.Huoneet[16] && vars[0] == "ota" && (vars[1] == "luu" || vars[1] == "reisiluu"))
             {
-                LisaaTavara("Vanhemman puoleinen reisiluu");
-                luuOtettu = true;
-                Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
-                kartta.Huoneet[16].HuoneenKuvaus = "Taivaalla juuri tällä kohdalla on varsin synkkiä pilviä. Karut koivut muodostavat käytävän, jonka reunoilla on hautakiviä. Maassa on kolo, jossa olisi voinut olla jonkun reisiluu. Pohjoisessa näet kiviaidan, jonka taa ei nää kovin hyvin. Lännessä on hautausmaan portti, jonka takaa erotat lohikäärmeisiä muotoja. Idässä näet kiviaidan, jonka takana loimottelee lämmin liekkimeri.Etelässäkin näet kiviaidan, jonka takana loimottelee lämmin liekkimeri.";
-                luuOtettu = true;
+                if (luuOtettu == true)
+                {
+                    Console.WriteLine("Ei täällä mitään luita ole otettavana enää! Tsekkaa reppus.");
+                }
+                else
+                {
+                    LisaaTavara("Vanhemman puoleinen reisiluu");
+                    luuOtettu = true;
+                    Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
+                    kartta.Huoneet[16].HuoneenKuvaus = "Taivaalla juuri tällä kohdalla on varsin synkkiä pilviä. Karut koivut muodostavat käytävän, jonka reunoilla on hautakiviä. Maassa on kolo, jossa olisi voinut olla jonkun reisiluu. Pohjoisessa näet kiviaidan, jonka taa ei nää kovin hyvin. Lännessä on hautausmaan portti, jonka takaa erotat lohikäärmeisiä muotoja. Idässä näet kiviaidan, jonka takana loimottelee lämmin liekkimeri.Etelässäkin näet kiviaidan, jonka takana loimottelee lämmin liekkimeri.";
+                    luuOtettu = true;
+                }
+                
             }
+            //kellon ottaminen
             else if (TämäHuone == kartta.Huoneet[2] && vars[0] == "ota" && (vars[1] == "kultakello" || vars[1] == "kello"))
             {
-                LisaaTavara("kultakello");
-                kelloOtettu = true;
-                Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
-                if (sormusOtettu == true && mattopiiskaOtettu == true)
+                if(kelloOtettu == true)
                 {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri istuu kahvilla pöydän ääressä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet mattotelineen.";
-                }
-                else if (sormusOtettu == true && mattopiiskaOtettu == false)
-                {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-               + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-               + " näet mattoja hakkaavan naapurin.";
-                }
-                else if (sormusOtettu == false && mattopiiskaOtettu == true)
-                {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, joku oli varastanut hänen mattopiiskan." +
-                "Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet matot mattotelineellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten timanttisormus.";
+                    Console.WriteLine("Ei täällä mitään kelloja enää ole, katso repustasi!");
                 }
                 else
                 {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet mattoja hakkaavan naapurin";
+                    LisaaTavara("kultakello");
+                    kelloOtettu = true;
+                    Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
+                    if (sormusOtettu == true && mattopiiskaOtettu == true)
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri istuu kahvilla pöydän ääressä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet mattotelineen.";
+                    }
+                    else if (sormusOtettu == true && mattopiiskaOtettu == false)
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                   + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                   + " näet mattoja hakkaavan naapurin.";
+                    }
+                    else if (sormusOtettu == false && mattopiiskaOtettu == true)
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, joku oli varastanut hänen mattopiiskan." +
+                    "Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet matot mattotelineellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten timanttisormus.";
+                    }
+                    else
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet mattoja hakkaavan naapurin";
+                    }
                 }
 
             }
+            //sormuksen ottaminen
             else if (TämäHuone == kartta.Huoneet[2] && vars[0] == "ota" && (vars[1] == "sormus" || vars[1] == "timanttisormus"))
             {
-                LisaaTavara(vars[1]);
-                sormusOtettu = true;
-                Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
-                if (kelloOtettu == true && mattopiiskaOtettu == true)
+                if (sormusOtettu == true)
                 {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri istuu kahvilla pöydän ääressä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet mattotelineen.";
-                }
-                else if (kelloOtettu == true && mattopiiskaOtettu == false)
-                {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-               + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-               + " näet mattoja hakkaavan naapurin.";
-                }
-                else if (kelloOtettu == false && mattopiiskaOtettu == true)
-                {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, joku oli varastanut hänen mattopiiskan." +
-                "Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet matot mattotelineellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello.";
+                    Console.WriteLine("Ei täällä mitään timanttisormusta enää ole, katso repustasi!");
                 }
                 else
                 {
-                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet mattoja hakkaavan naapurin";
+                    LisaaTavara(vars[1]);
+                    sormusOtettu = true;
+                    Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
+                    if (kelloOtettu == true && mattopiiskaOtettu == true)
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri istuu kahvilla pöydän ääressä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet mattotelineen.";
+                    }
+                    else if (kelloOtettu == true && mattopiiskaOtettu == false)
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                   + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                   + " näet mattoja hakkaavan naapurin.";
+                    }
+                    else if (kelloOtettu == false && mattopiiskaOtettu == true)
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, joku oli varastanut hänen mattopiiskan." +
+                    "Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet matot mattotelineellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello.";
+                    }
+                    else
+                    {
+                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet mattoja hakkaavan naapurin";
+                    }
                 }
+                
 
             }
+            //mattopiiskan ottaminen
             else if (TämäHuone == kartta.Huoneet[1] && vars[0] == "ota" && vars[1] == "mattopiiska")
             {
-                mattopiiskaOtettu = true;
-                LisaaTavara("mattopiiska");
-                Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
-                kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, joku oli varastanut hänen mattopiiskan." +
-                "Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
-                + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                + " näet matot mattotelineellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello ja timanttisormus.";
+                if (mattopiiskaOtettu == true)
+                {
+                    Console.WriteLine("Ei täällä mitään mattopiiskaa enää ole, katso repustasi!");
+                }
+                else
+                {
+                    mattopiiskaOtettu = true;
+                    LisaaTavara("mattopiiska");
+                    Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
+                    kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, joku oli varastanut hänen mattopiiskan." +
+                    "Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. Idässä on seinä, jonka ikkunasta näkyy aita ja"
+                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                    + " näet matot mattotelineellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello ja timanttisormus.";
+                }
+                
             }
             else if (TämäHuone == kartta.Huoneet[4] && vars[0] == "ota" && !kyyhkynenElossa && (vars[1] == "jauheliha" || vars[1] == "kyyhkysen jauheliha"))
             {
-                LisaaTavara("Kyyhkysen jauheliha");
-                LihaOtettu = true;
-                Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
-                kartta.Huoneet[4].HuoneenKuvaus = "Olet aukiolla olevan kumpareen luona ja edessäsi näet puun, jonka oksalla on enää Kyyhkys-Jussin muisto. Pohjoisessa liekehtii liekkimeri."
-                + "Etelässä näet lehmälauman, jonka yksilöt tuijottavat sinua lehmänsilmillään. Idässä loimuaa liekkimeri. Lännessä näet"
-                + " lehmälauman märehtivän.";
-            }
-            else if (TämäHuone == kartta.Huoneet[11] && vars[0] == "ota" && (vars[1] == "juliste" || vars[1] == "koirajuliste"))
-            {
-                LisaaTavara("Koirajuliste");
-                koiraJulisteOtettu = true;
-                Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
-                if (silinteriHattuOtettu == true)
+                if (LihaOtettu == true)
                 {
-                    kartta.Huoneet[11].HuoneenKuvaus = "11 Olet huoneessa, jossa on pöytä. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovi.";
+                    Console.WriteLine("Taitaa jauhelihat olla jo repussa!");
                 }
                 else
                 {
-                    kartta.Huoneet[11].HuoneenKuvaus = "11 Olet huoneessa, jossa on pöytä jolla on silinterihattu. Pöydän alla lojuu ruostunut avain. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovi.";
+                    LisaaTavara("Kyyhkysen jauheliha");
+                    LihaOtettu = true;
+                    Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
+                    kartta.Huoneet[4].HuoneenKuvaus = "Olet aukiolla olevan kumpareen luona ja edessäsi näet puun, jonka oksalla on enää Kyyhkys-Jussin muisto. Pohjoisessa liekehtii liekkimeri."
+                    + "Etelässä näet lehmälauman, jonka yksilöt tuijottavat sinua lehmänsilmillään. Idässä loimuaa liekkimeri. Lännessä näet"
+                    + " lehmälauman märehtivän.";
                 }
+                
+            }
+            else if (TämäHuone == kartta.Huoneet[11] && vars[0] == "ota" && (vars[1] == "juliste" || vars[1] == "koirajuliste"))
+            {
+                if (koiraJulisteOtettu == true)
+                {
+                    Console.WriteLine("Ei täällä mitään julisteita ole, onko sinulla repussa jo sellainen?");
+                }
+                else
+                {
+                    LisaaTavara("Koirajuliste");
+                    koiraJulisteOtettu = true;
+                    Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
+                    if (silinteriHattuOtettu == true)
+                    {
+                        kartta.Huoneet[11].HuoneenKuvaus = "Olet huoneessa, jossa on pöytä. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovi.";
+                    }
+                    else
+                    {
+                        kartta.Huoneet[11].HuoneenKuvaus = "Olet huoneessa, jossa on pöytä jolla on silinterihattu. Pöydän alla lojuu ruostunut avain. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovi.";
+                    }
+                }
+               
 
             }
             else if (TämäHuone == kartta.Huoneet[11] && vars[0] == "ota" && (vars[1] == "silinterihattu" || vars[1] == "hattu"))
@@ -365,15 +443,23 @@ namespace KyyhkysJussi
                 {
                     Console.WriteLine("Ei täällä mitään hattuja enää ole");
                 }
-                
-                silinteriHattuOtettu = true;
-                onkoPäässäHattu = true;
-                Console.WriteLine($"{vars[1]} otettu ja laitettu päähän.");
-                if (koiraJulisteOtettu == true)
+                else
                 {
-                    kartta.Huoneet[11].HuoneenKuvaus = "Olet huoneessa, jossa on pöytä. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovesi.";
+                    silinteriHattuOtettu = true;
+                    onkoPäässäHattu = true;
+                    Console.WriteLine($"{vars[1]} otettu ja laitettu päähän.");
+                    if (koiraJulisteOtettu == true)
+                    {
+                        kartta.Huoneet[11].HuoneenKuvaus = "Olet huoneessa, jossa on pöytä. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovesi.";
+                    }
+                    else
+                    {
+                        kartta.Huoneet[11].HuoneenKuvaus = "Olet huoneessa, jossa on pöytä. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovesi, jossa on komea koirajuliste.";
+                    }
+                   
                 }
-                kartta.Huoneet[11].HuoneenKuvaus = "Olet huoneessa, jossa on pöytä. Pohjoisella, läntisellä ja itäisellä seinällä on ikkunoita. Etelään päin on ovesi, jossa on komea koirajuliste.";
+                
+                
             }
             // lohikäärmeen kanssa asiointi -Elli
             else if (TämäHuone == kartta.Huoneet[15] && vars[0] == "lyö")
@@ -405,33 +491,31 @@ namespace KyyhkysJussi
                 }
                 if (numero >= 7 && numero < 9)
                 {
-                    Console.WriteLine("Lohikäärme antaa sinulle vinkin\"!\" Mene hautuumaalle ja koita kiivetä aidan yli.");
+                    Console.WriteLine("Lohikäärme antaa sinulle vinkin! \" Mene hautuumaalle ja koita kiivetä aidan yli.");
                 }
             }
 
-            //yksisarvisen lyöminen
+            //yksisarvisen lyöminen -Elli
             else if (TämäHuone == kartta.Huoneet[12] && vars[0] == "lyö")
             {
                 Console.WriteLine("Olitpa tyhmä kun löit yksisarvista! Yksisarvinen tökkäsi sarvensa sinuun ja kuolit väkivaltaisen kuoleman.");
                 GameOver();
             }
 
-            //fasaanin lyöminen
+            //fasaanin lyöminen - Elli / Jukka
             else if (TämäHuone == kartta.Huoneet[9] && vars[0] == "lyö")
             {
                 Console.WriteLine("Fasaani karkasi. Ehkä se tulee ensi kerralla takaisin jos olet kiltimpi.");
                 kartta.Huoneet[9].HuoneenKuvaus = "Olet niityllä, jossa yleensä on fasaani. Tällä kertaa fasaani on lähtenyt karkuteille kun häntä on yritetty pahoinpidellä. Pohjoisessa näet korkean lauta-aidan. Etelässä"
             + " näet leipurin talon, jonka ikkunassa leipuri naputtaa kauhalla kämmeneensä. Idässä näet ruohikkoisen aukean, jonka keskellä"
             + " kiemurtelee polku. Lännessä loimuaa liekkimeri.";
+                // fasaani asetetaan palaavaksi kolmen liikkumisen jälkeen
                 FasaaniPiilossa = 0;
 
             }
-            else if(TämäHuone == kartta.Huoneet[13])
-            {
-                Console.WriteLine("Onpas sinulla hieno hattu!");
-            }
+            
 
-            // sanomiset leipuri
+            // sanomiset leipuri -Elli
             else if (TämäHuone == kartta.Huoneet[13] && vars[0] == "sano")
             {
                 int numero = rnd.Next(1, 10);
@@ -448,32 +532,34 @@ namespace KyyhkysJussi
                     Console.WriteLine("Leipuri lurittaa menemään \"Lihhoota, lihhoota, enemmän lihhoota\". Huomaat pienen kaipuun kyynelen Okssun silmäkulmassa.");
                 }
             }
-            //fasaani
+            //fasaani -Elli
             else if (TämäHuone == kartta.Huoneet[9] && vars[0] == "sano" && vars[1] == "piip" && vars[2] == "piip" && vars[3] == "motherfucker")
             {
                 Console.WriteLine("\"Loukkasit äitiäni ja nyt kuolet!\" Sanoi fasaani. Fasaani alkaa raivokkaasti repimään sinusta palasia irti ja veri roiskuu.");
                 GameOver();
             }
-            //yksisarvisen kanssa
+            //yksisarvisen kanssa -Henni
             else if (TämäHuone == kartta.Huoneet[12] && vars[0] == "sano" && vars[1] == "pruu" && vars[2] == "pruu")
             {
-                Console.WriteLine("\"Tervetuloa niitylleni," + UI.Pelaaja.Nimi + ". Kerron sinulle salaisuuden! Taikasanan, jolla pääset ihmeelliseen maailmaan! Lausu siis 'teleport pruu pruu' ja anna tuulen kuljettaa <3 <3 <3 <3\"");
+                Console.WriteLine("\"Tervetuloa niitylleni," + UI.Pelaaja.Nimi + "! Kerron sinulle salaisuuden! Taikasanan, jolla pääset ihmeelliseen maailmaan! Lausu siis 'teleport pruu pruu' ja anna tuulen kuljettaa <3 <3 <3 <3\"");
             }
-            //teleportti
-            else if (vars[0] == "loitsi" && vars[1] == "teleport")
+            
+            //teleportti -Henni
+            else if (vars[0] == "loitsi" && vars[1] == "teleport" && int.TryParse(vars[2], out int indeksi) && indeksi <= 17 && indeksi >= 0) //vars.Any(_ => kartta.Huoneet.Contains(_))
             {
-                Console.WriteLine("Surprizio!");
+                Console.WriteLine("Il teleportatsioone molto magnifico!");
+                TämäHuone = kartta.Huoneet[indeksi]; //vars.Any(_ => kartta.Huoneet.Contains(_));
+                LiikuttuBool = true;
             }
             else if (vars[0] == "loitsi" && vars[1] == "teleport" && vars[2] == "pruu" && vars[3] == "pruu")
             {
                 Console.WriteLine("Il teleportatsioone molto magnifico!");
                 TämäHuone = kartta.Huoneet[17];
             }
-            //else if (vars[0] == "loitsi" && vars[1] == "teleport" && vars[2].Contains)
-            //{
-            //    Console.WriteLine("Il teleportatsioone molto magnifico!");
-            //    TämäHuone = kartta.Huoneet[17];
-            //}
+            else if (vars[0] == "loitsi" && vars[1] == "teleport")
+            {
+                Console.WriteLine("Surprizio!");
+            }
             else if (TämäHuone == kartta.Huoneet[12] && vars[0] == "loitsi" || vars[0] == "loitsi" && vars[1] == "pruu" && vars[2] == "pruu")
                 {
                     Console.WriteLine("Il teleportatsioone molto malo!");
@@ -492,21 +578,31 @@ namespace KyyhkysJussi
 
             }
 
-            //antamiset
+            //jauhelihan antaminen -Elli
             else if (TämäHuone == kartta.Huoneet[13] && vars[0] == "anna" && (vars[1] == "jauheliha"||vars[1] == "kyyhkysen jauheliha"))
             {
-                Console.WriteLine("\"Ihanaa, olen niin onnellinen! Sain vihdoin lihaa! Kyllä alan nyt heti tästä leipomaan lihapiirakkaa!\" Sanoo leipuri Okssu.");
-                //Pelin voittometodin kutsuminen
+                Console.WriteLine("\"Ihanaa, olen niin onnellinen! Sain vihdoin lihaa! Kyllä alan nyt heti tästä leipomaan lihapiirakkaa!\" Sanoo leipuri Okssu." +
+                    " Okssu alkaa leipomaan lihapiirakkaa ponnekkaasti. Kun lihapiirakka on valmis, syö leipuri piirakan ja hyppää masennuksissaan tulimereen");
+                
 
             }
+            //mattopiiskan antaminen
             else if (TämäHuone == kartta.Huoneet[4] && vars[0] == "anna" && vars[1] == "mattopiiska")
             {
                 if(mattopiiskaOtettu = true && Kyyhky.Mielenterveys < 5)
                 {
-                    Console.WriteLine("Kyykynen hakkaa sinut kuoliaaksi mattopiiskalla kaikessa hiljaisuudessa lehmien katsoessa hyväksyvästi. Kukaan ei tykkää kiusaajista!");
+                    Console.WriteLine("Kyykynen hakkaa sinut kuoliaaksi mattopiiskalla kaikessa hiljaisuudessa lehmien katsoessa hyväksyvästi. Veri lentää ja suolenpätkät pursuavat. Kukaan ei tykkää kiusaajista!");
                     MattopiiskaAnnettu = true;
                     GameOver();
                 }                
+
+            }
+            //koirajulisteen antaminen
+            else if ((TämäHuone == kartta.Huoneet[3] || TämäHuone == kartta.Huoneet[7] || TämäHuone== kartta.Huoneet[8]) && vars[0] == "anna" && (vars[1] == "koirajuliste"|| vars[1] == "juliste"))
+            {
+               
+                    Console.WriteLine("Lehmät riemastuvat koirajulisteesta ja alkavat katsoa sitä!");
+                    koiraJulisteAnnettu = true;                                   
 
             }
 
@@ -514,7 +610,7 @@ namespace KyyhkysJussi
 
 
             //Kyyhkysinteraktiot -Jukka
-                else if(TämäHuone == kartta.Huoneet[4] && vars[0] == "sano" && vars.Any(_ => Kyyhky.HaittaSanat.Contains(_)) && MattopiiskaAnnettu)
+            else if(TämäHuone == kartta.Huoneet[4] && vars[0] == "sano" && vars.Any(_ => Kyyhky.HaittaSanat.Contains(_)) && MattopiiskaAnnettu)
                 {
                 Console.WriteLine("Kyyhkynen kaivaa taskustaan antamasi mattopiiskan, lentää luoksesi ja hakkaa sinua niin kovaa, että lihasi erottuu luista. Viimeinen asia, jonka näet on oma veresi joka roiskuu kaarissa.");
                     GameOver();
@@ -582,7 +678,9 @@ namespace KyyhkysJussi
                 Helppi();
             }
         }
-        public void LiikuHuoneista(string ilmansuunta = "")
+
+        //liikkuminen huoneista
+        public void LiikuHuoneista(string ilmansuunta)
         {
 
             if (TämäHuone == kartta.Huoneet[0])
@@ -594,6 +692,7 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -602,9 +701,10 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "i":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet naapuriluurangon talon.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet luuranko-naapurin talon.");
                         break;
                     case "l":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -615,7 +715,7 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta helvetin.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta loimuavan liekkimeren.");
                         break;
                     case "e":
                         TämäHuone = kartta.Huoneet[6];
@@ -625,7 +725,7 @@ namespace KyyhkysJussi
                         Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta lehmäpellon.");
                         break;
                     case "l":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet matontamppauspaikan ikkunasta.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta matontamppauspaikan.");
                         break;
 
                 }
@@ -633,9 +733,14 @@ namespace KyyhkysJussi
             }
             else if (TämäHuone == kartta.Huoneet[3])
             {
+                if (!koiraJulisteAnnettu)
+                {
+                    LehmiäTiellä();
+                }
                 switch (ilmansuunta)
                 {
                     case "p":
+                         HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -659,6 +764,7 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -667,6 +773,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "i":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -694,6 +801,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "l":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -728,6 +836,10 @@ namespace KyyhkysJussi
 
             else if (TämäHuone == kartta.Huoneet[7])
             {
+                if (!koiraJulisteAnnettu)
+                {
+                    LehmiäTiellä();
+                }
                 switch (ilmansuunta)
                 {
                     case "p":
@@ -751,6 +863,10 @@ namespace KyyhkysJussi
             }
             else if (TämäHuone == kartta.Huoneet[8])
             {
+                if (!koiraJulisteAnnettu)
+                {
+                    LehmiäTiellä();
+                }
                 switch (ilmansuunta)
                 {
                     case "p":
@@ -758,9 +874,10 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "e":
-                        Console.WriteLine("Et voi mennä aidan läpi! Mene johonkin toiseen suuntaan!");
+                        Console.WriteLine("Kiviaidan läpi ei voi kävellä, pääsetköhän tästä jotenkin muuten?");
                         break;
                     case "i":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -779,13 +896,14 @@ namespace KyyhkysJussi
                         Console.WriteLine("Et pääse aidasta läpi");
                         break;
                     case "e":
-                        Console.WriteLine("Edessäsi on leipurin mökki, ette voi mennä seinästä läpi.");
+                        Console.WriteLine("Edessäsi on leipurin mökki, et voi mennä seinästä läpi.");
                         break;
                     case "i":
                         TämäHuone = kartta.Huoneet[10];
                         Liikuttu();
                         break;
                     case "l":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -850,11 +968,12 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "i":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
                     case "l":
-                        Console.WriteLine("Näet kotimökkisi itäseinän.");
+                        Console.WriteLine("Näet kotimökkisi itäseinän, et voi kävellä seinän läpi.");
                         break;
 
                 }
@@ -865,17 +984,17 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Näet ikkunan ja ikkunan takana pellon, jolla tallustelee fasaani.");
+                        Console.WriteLine("Edessäsi on leipurin mökin pohjoisseinä ja ikkunan takana näet pellon, jolla tallustelee fasaani.");
                         break;
                     case "e":
-                        Console.WriteLine("Näet ikkunan ja ikkunan takana roihuaa tulimeri");
+                        Console.WriteLine("Edessäsi on leipurin mökin eteläseinä, jonka ikkunan takana roihuaa tulimeri");
                         break;
                     case "i":
                         TämäHuone = kartta.Huoneet[14];
                         Liikuttu();
                         break;
                     case "l":
-                        Console.WriteLine("Näet ikkunan ja ikkunan takana roihuaa tulimeri");
+                        Console.WriteLine("Edessäsi on leipurin mökin länsiseinä, jonka ikkunasta näet kuumana roihuavan tulimeren");
                         break;
 
                 }
@@ -890,6 +1009,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "e":
+                        HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         Liikuttu();
                         break;
@@ -914,7 +1034,8 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "e":
-                        TämäHuone = kartta.Huoneet[0];
+                        HaluatkoKuolla();
+                        TämäHuone = kartta.Huoneet[0];                        
                         Liikuttu();
                         
                         break;
@@ -954,9 +1075,32 @@ namespace KyyhkysJussi
 
         public void LehmiäTiellä() //Anni
         {
-            Random satunnainen = new Random();
-            int nro = satunnainen.Next(1, 10);
-            if (nro == 1) { }
+            int nro = rnd.Next(1, 10);
+            if (nro == 1 || nro == 2 || nro == 3)
+            {
+                Console.WriteLine("Pääset puikkelehtimaan lehmien välistä!");
+            }
+            else
+            {
+                Console.WriteLine("Lehmät tukkivat tiesi");
+                Peli();
+            }
+        }
+        public void HaluatkoKuolla() //Anni
+        {
+
+            Console.WriteLine($"Oletko aivan varma että haluat kävellä tulimereen? Saattaa olla melko lämmin... (k/e)");
+            string jatka = Console.ReadLine();
+            if (jatka == "k")
+            {
+                Console.WriteLine("Kävelit tulimereen. Liekit hyväilevät innolla ruumiisi muotoja, muuttaen karvasi tuhkaksi. Ihosi kärventyy ja mietit itseksesi, \"Olisin varmaan hyvänmakuinen\". Viimeisenä näkökenttäsi mustuu ja silmäsi räjähtävät kuumuudesta *poks* *ruisk*");
+                GameOver();
+            }
+            else
+            {
+                Console.WriteLine("Viisas päätös. Kokeile lähteä johonkin toiseen suuntaan!");
+                Peli();
+            }
         }
 
         public void GameOver() //Anni

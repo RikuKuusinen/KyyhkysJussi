@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KyyhkysJussi
 {
-    public class Sanat
+    public class Sanat //Elli, Henni
     {
         public string sana;
 
