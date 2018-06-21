@@ -43,7 +43,44 @@ namespace KyyhkysJussi
         public bool onkoPäässäHattu = false;
         public bool koiraJulisteAnnettu = false;
         public bool luurankoElossa = true;
-      
+        string kj = @"                                                                                                 
+                                                                                            Nd N
+                                                                                          Nd/::::o
+                                                                                     Ndhhyhhysso+/: 
+                                                                                     hyhhhd hhhyyso
+                                                                                  NdhhhhhhddddhhhhyN
+                                                                                 ddddddddhhdd dyyyd
+                                                                       N  ddd d ddddddddddhhdhy:dN
+                                                               Nysooosyhhddd    ddddddddddddhddoNN
+                                                          Nhso///+oosyhhhdd             dddddhNd N
+                                                        Nhs/----:://++syhdddddd              dd   N 
+                                                    Nds:...---::///++ossyhdddddd              dN    
+                                                ho//---:::////////////osyyhddddddd            dN    
+                                          Ndyo:::/++++++++oo+oo+o+ooooooosyhhhdddddd d
+                                        dh/++/++oossoooossosooosossssssooosyhdddddd dN
+                                dh+shhs+oo/os/oooossoossssssssssssssssssssssydddddd N
+                               NNdhosyhhddyddsooooossssssssssssssyssssyssssyyyhddddd dN
+                            N dyo+hdddsd hooosssssssssssssssyyyyyyyyssssssyyyddddd     h
+                        NNN dyyoodd yd    hyyyyyossssssssysyyyyyyyyyyyyyyyyyyyhdddd dd
+                        dhyysyysosy N  shd hyyyhyyyysyyyssyyyyyyyyyyyyyyyyyyyyyyhddddN
+                     dsosssyhdyyyyy dysh N yyyyyyysyyyyyyyyyyyyyyyyyyyyyyyyyyyyhh
+                  hysssyyhhhd hysssyd   yyhdd NN dddhyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyh
+       NN   Ndyo+++shyyhdd dhysshNNNdyyyyhdNNNNNyyyyyyyyyyhhyyyyyyyyyyyyyyyyyy
+   hy+osyhdy++syhhdd dh NNN hyhhhdd NN hyyyyyyyhhhyyyyyyyyyyyyyyyh
+ N:+yh d dd ddddddd     N hyyyyyhd NN dhyyyyyyyyyyyyyyyyyyhhdN
+ hsh ddddddddddddddddddddd  NNNN dhyyhhhhd  N dhhyyyyyyyyhy N
+ d     NNNN dddddddddddddhddddddddd      dhhhhhhhhhhhhhhhhhhyshd
+ dd  NNNNNN dysosh      dddd N hhdddddddhhyyyd dhssyyyhhddhhhhyhN
+ddd NN                      NN NN   hhyyd N    dyooshN dhhdN
+NNNNN d d NNN       Nyssd
+                                                                NNNNdhsooh
+                                                           Nyshdd N  Nhhd N
+                                                               N ssss+oy
+                                                                        hhyydhsosoy                 
+                                                                        +:++o
+                                                                         ds+o
+";
+
 
         // Mittaa sitä kuinka monta vuoroa on mennyt siitä, että fasaani on viimeksi piiloutunut, jos arvo on 3 Peli() muuttaa tekstin niin, että fasaani näkyy jälleen. 
         int FasaaniPiilossa = 5;
@@ -62,6 +99,7 @@ namespace KyyhkysJussi
         public void AloitaPeli() // Jukka
         {
             Console.WriteLine("Tervetuloa Kyyhkys-Jussin seikkailuun!\n");
+            Console.WriteLine(kj);
             Helppi();
             Console.Write("Paina nappia luodaksesi pelaajahahmosi!");
             Console.ReadKey();
