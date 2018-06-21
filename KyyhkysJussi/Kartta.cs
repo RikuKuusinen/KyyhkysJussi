@@ -17,7 +17,7 @@ namespace KyyhkysJussi
 
             "Näet edessäsi luurangon, joka on naapurin mökin isäntä. Hänellä on kädessään mattopiiska ja hän piiskaa mattoja." 
                 + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                + " Ikkunan takana kimaltelee kultakello ja timanttisormus. Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n",
+                + "  Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n",
 
             "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Lännessä on seinä, jonka ikkunasta näkyy aita ja"
                 + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta"

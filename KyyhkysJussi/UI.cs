@@ -389,9 +389,6 @@ NNNNN d d NNN       Nyssd
                     Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
                     if (sormusOtettu == true && mattopiiskaOtettu == true)
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline."
-                   + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                   + " Kahvipannu näyttää olevan porisemassa liedellä. \n - Lännessä leimuaa liekkimeri.\n";
 
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri istuu kahvilla pöydän ääressä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                     + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet.  \n- Lännessä on seinä, jonka ikkunasta"
@@ -399,20 +396,12 @@ NNNNN d d NNN       Nyssd
                     }
                     else if (sormusOtettu == true && mattopiiskaOtettu == false)
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline, jonka vieressä lojuu mattopiiska"
-                   + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                   + " Kahvipannu näyttää olevan porisemassa liedellä. \n - Lännessä leimuaa liekkimeri.\n";
-
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet.  \n- Lännessä on seinä, jonka ikkunasta"
                    + " näet mattoja hakkaavan naapurin.\n";
                     }
                     else if (sormusOtettu == false && mattopiiskaOtettu == true)
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline."
-                   + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                   + " Kahvipannu näyttää olevan porisemassa liedellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten timanttisormus. \n - Lännessä leimuaa liekkimeri.\n";
-
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, koska joku oli varastanut hänen mattopiiskansa. " 
                     + " \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                     + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet.  \n- Lännessä on seinä, jonka ikkunasta"
@@ -420,10 +409,6 @@ NNNNN d d NNN       Nyssd
                     }
                     else
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline, jonka vieressä lojuu mattopiiska"
-                   + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                   + " Kahvipannu näyttää olevan porisemassa liedellä.  \n - Lännessä leimuaa liekkimeri.\n";
-
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                     + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet.  \n- Lännessä on seinä, jonka ikkunasta"
                     + " näet mattoja hakkaavan naapurin\n";
@@ -445,30 +430,20 @@ NNNNN d d NNN       Nyssd
                     Console.WriteLine($"{vars[1]} otettu ja lisätty reppuun.");
                     if (kelloOtettu == true && mattopiiskaOtettu == true)
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline."
-                    + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                    + " Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
-
+                       
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri istuu kahvilla pöydän ääressä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                     + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet.  \n- Lännessä on seinä, jonka ikkunasta"
                     + " näet mattotelineen.\n";
                     }
                     else if (kelloOtettu == true && mattopiiskaOtettu == false)
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline, jonka vieressä lojuu mattopiiska"
-                    + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                    + " Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
-
+                       
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \n- Lännessä on seinä, jonka ikkunasta"
                    + " näet mattoja hakkaavan naapurin.\n";
                     }
                     else if (kelloOtettu == false && mattopiiskaOtettu == true)
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline, jonka vieressä lojuu mattopiiska"
-                   + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                   + " Kahvipannu näyttää olevan porisemassa liedellä. Talon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello. \n - Lännessä leimuaa liekkimeri.\n";
-
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Naapuri näkyy istuvan kahvikupposella, koska joku oli varastanut hänen mattopiiskansa." 
                     + " \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                     + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \n- Lännessä on seinä, jonka ikkunasta"
@@ -476,10 +451,6 @@ NNNNN d d NNN       Nyssd
                     }
                     else
                     {
-                        kartta.Huoneet[1].HuoneenKuvaus = "Edessäsi on mattoteline, jonka vieressä lojuu mattopiiska"
-                   + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                   + " Kahvipannu näyttää olevan porisemassa liedellä. \n - Lännessä leimuaa liekkimeri.\n";
-
                         kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                     + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \n- Lännessa on seinä, jonka ikkunasta näet mattoja hakkaavan naapurin\n";
                     }
@@ -523,13 +494,13 @@ NNNNN d d NNN       Nyssd
                         {
                             kartta.Huoneet[1].HuoneenKuvaus = "Näet edessäsi mattotelineen."
                    + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän.\n"
-                   + " Ikkunan takana kimaltelee kultakello. Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
+                   + " Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
                         }
                         else
                         {
                             kartta.Huoneet[1].HuoneenKuvaus = "Näet edessäsi mattotelineen."
                    + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän.\n"
-                   + " Ikkunan takana kimaltelee timanttisormus. Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
+                   + " Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
                         }
 
                     }
@@ -767,7 +738,7 @@ NNNNN d d NNN       Nyssd
                 {
                     kartta.Huoneet[1].HuoneenKuvaus = "Maassa lojuu mattopiiska."
                 + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-                + " Ikkunan takana kimaltelee kultakello ja timanttisormus. Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
+                + " Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
 
                     kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                 + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta"
@@ -777,7 +748,7 @@ NNNNN d d NNN       Nyssd
                 {
                     kartta.Huoneet[1].HuoneenKuvaus = "Maassa lojuu mattopiiska."
              + " Pohjoisessa liekehtii liekkimeri. Etelässä näet mattokasan ruohikkoisella aukiolla. \nIdässä näet naapurin mökin länsiseinän."
-             + " Ikkunan takana kimaltelee timanttisormus. \nKahvipannu näyttää olevan porisemassa liedellä. Lännessä leimuaa liekkimeri.\n";
+             + " \nKahvipannu näyttää olevan porisemassa liedellä. Lännessä leimuaa liekkimeri.\n";
 
                     kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                 + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta"
@@ -787,7 +758,7 @@ NNNNN d d NNN       Nyssd
                 {
                     kartta.Huoneet[1].HuoneenKuvaus = "Maassa lojuu mattopiiska."
           + " \n- Pohjoisessa liekehtii liekkimeri. \n- Etelässä näet mattokasan ruohikkoisella aukiolla. \n- Idässä näet naapurin mökin länsiseinän."
-          + " Ikkunan takana kimaltelee kultakello. Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
+          + " Kahvipannu näyttää olevan porisemassa liedellä. \n- Lännessä leimuaa liekkimeri.\n";
 
                     kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. \n- Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \n- Idässä on seinä, jonka ikkunasta näkyy aita ja"
                 + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \n- Etelässä on auki jättämäsi ulko-ovi. \n- Idässä on seinä, jonka ikkunasta"
