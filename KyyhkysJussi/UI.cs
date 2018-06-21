@@ -803,7 +803,7 @@ namespace KyyhkysJussi
             //Kyyhkysinteraktiot -Jukka
             else if (TämäHuone == kartta.Huoneet[4] && vars[0] == "sano" && vars.Any(_ => Kyyhky.HaittaSanat.Contains(_)) && MattopiiskaAnnettu)
             {
-                Console.WriteLine("Kyyhkynen kaivaa taskustaan antamasi mattopiiskan, lentää luoksesi ja hakkaa sinua niin kovaa, että lihasi erottuu luista. Viimeinen asia, jonka näet, on oma veresi joka roiskuu kaarissa.");
+                Console.WriteLine("Kyyhkynen kaivaa taskustaan antamasi mattopiiskan, lentää luoksesi ja hakkaa sinua niin kovaa, että lihasi erottuu luista. Viimeinen asia, jonka näet, on oma veresi joka roiskuu kaarissa.\n");
                 GameOver();
             }
             else if (TämäHuone == kartta.Huoneet[4] && vars[0] == "sano" && vars.Any(_ => Kyyhky.HaittaSanat.Contains(_)))
@@ -811,23 +811,23 @@ namespace KyyhkysJussi
                 Kyyhky.VähennäMielenterveyttä();
                 if (Kyyhky.Mielenterveys == 4)
                 {
-                    Console.WriteLine("Kyyhky näyttää hieman surullisemmalta.");
+                    Console.WriteLine("Kyyhky näyttää hieman surullisemmalta.\n");
                 }
                 if (Kyyhky.Mielenterveys == 3)
                 {
-                    Console.WriteLine("Kyyhkyn olemus synkkenee ja sen kasvoille ilmestyy huoliryppyjä.");
+                    Console.WriteLine("Kyyhkyn olemus synkkenee ja sen kasvoille ilmestyy huoliryppyjä.\n");
                 }
                 if (Kyyhky.Mielenterveys == 2)
                 {
-                    Console.WriteLine("Kyyhkyn ryppyisille kasvoilla valuu vuolas virta kyyneliä.");
+                    Console.WriteLine("Kyyhkyn ryppyisille kasvoilla valuu vuolas virta kyyneliä.\n");
                 }
                 if (Kyyhky.Mielenterveys == 1)
                 {
-                    Console.WriteLine("Kyyhky tuijottaa tyhjyyteen ja alkaa kaivella taskujaan");
+                    Console.WriteLine("Kyyhky tuijottaa tyhjyyteen ja alkaa kaivella taskujaan\n");
                 }
                 if (Kyyhky.Mielenterveys <= 0)
                 {
-                    Console.WriteLine("Kyyhky kaivaa taskustaan lihamyllyn, astuu siihen ja alkaa veivata itseään jauhelihaksi. \nJähmetyt tuijottamaan, kunka kyyhky muuntuu veriseksi muusiksi hitaasti \nja tuskallisen näköisesti. Kyyhkyn päättäväisesti veivaa menemään \nitseään jauhelihaksi luiden napsuessa poikki ja veren roiskuessa ympäriinsä.");
+                    Console.WriteLine("Kyyhky kaivaa taskustaan lihamyllyn, astuu siihen ja alkaa veivata itseään jauhelihaksi. \nJähmetyt tuijottamaan, kunka kyyhky muuntuu veriseksi muusiksi hitaasti \nja tuskallisen näköisesti. Kyyhkyn päättäväisesti veivaa menemään \nitseään jauhelihaksi luiden napsuessa poikki ja veren roiskuessa ympäriinsä.\n");
                     kyyhkynenElossa = false;
                     kartta.Huoneet[4].HuoneenKuvaus = "Olet aukiolla olevan kumpareen luona ja edessäsi näet puun, jonka oksa näyttää yksinäiseltä. Maassa on lihamylly, jonka vieressä on kasa kyyhkys-jauhelihaa. \n- Pohjoisessa liekehtii liekkimeri."
                 + " \n- Etelässä näet lehmälauman, jonka yksilöt tuijottavat sinua syyttävän oloisesti lehmänsilmillään. \n- Idässä loimuaa liekkimeri. \n- Lännessä näet"
@@ -839,27 +839,27 @@ namespace KyyhkysJussi
                 Kyyhky.LisääMielenterveyttä();
                 if (Kyyhky.Mielenterveys == 4)
                 {
-                    Console.WriteLine("Kyyhky näyttää enää vain hieman surulliselta.");
+                    Console.WriteLine("Kyyhky näyttää enää vain hieman surulliselta.\n");
                 }
                 if (Kyyhky.Mielenterveys == 3)
                 {
-                    Console.WriteLine("Ihan kuin kyyhkyn huolirypyt alkaisivat siloittua");
+                    Console.WriteLine("Ihan kuin kyyhkyn huolirypyt alkaisivat siloittua\n");
                 }
                 if (Kyyhky.Mielenterveys == 2)
                 {
-                    Console.WriteLine("Kyyhky lopettaa taskujensa kaivelun ja kyynelvirta tyrehtyy.");
+                    Console.WriteLine("Kyyhky lopettaa taskujensa kaivelun ja kyynelvirta tyrehtyy.\n");
                 }
                 if (Kyyhky.Mielenterveys == 1)
                 {
-                    Console.WriteLine("Kyyhky tuijottaa tyhjyyteen ja alkaa kaivella taskujaan");
+                    Console.WriteLine("Kyyhky tuijottaa tyhjyyteen ja alkaa kaivella taskujaan\n");
                 }
                 if (Kyyhky.Mielenterveys >= 5 && Kyyhky.Mielenterveys < 10)
                 {
-                    Console.WriteLine("Kyyhky vaikuttaa suhteellisen onnelliselta");
+                    Console.WriteLine("Kyyhky vaikuttaa suhteellisen onnelliselta\n");
                 }
                 if (Kyyhky.Mielenterveys == 10)
                 {
-                    Console.WriteLine("Kyyhky on silminnähden iloinen! Olet parantanut kyyhkyn oloa ja ansaitset paikkasi Hyvien Tyyppien listalla! Nyt voit olla hyvin mielin.");
+                    Console.WriteLine("Kyyhky on silminnähden iloinen! Olet parantanut kyyhkyn oloa ja ansaitset paikkasi Hyvien Tyyppien listalla! Nyt voit olla hyvin mielin.\n");
 
                     GameOver();
                 }
@@ -872,7 +872,7 @@ namespace KyyhkysJussi
             // jos kaikki muu ei toimi...
             else
             {
-                Console.WriteLine("Yritähän toisin sanoin, tai lue vaikka \"apua\"-komennolla miten voisit käskyttää peliä.");
+                Console.WriteLine("Yritähän toisin sanoin, tai lue vaikka \"apua\"-komennolla miten voisit käskyttää peliä.\n");
             }
         }
 
@@ -898,7 +898,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "i":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet luuranko-naapurin talon.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet luuranko-naapurin talon.\n");
                         break;
                     case "l":
                         HaluatkoKuolla();
@@ -913,17 +913,17 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta loimuavan liekkimeren.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta loimuavan liekkimeren.\n");
                         break;
                     case "e":
                         TämäHuone = kartta.Huoneet[6];
                         Liikuttu();
                         break;
                     case "i":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta lehmäpellon.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta lehmäpellon.\n");
                         break;
                     case "l":
-                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta matontamppauspaikan.");
+                        Console.WriteLine("Et voi mennä seinästä läpi, näet ikkunasta matontamppauspaikan.\n");
                         break;
 
                 }
@@ -951,7 +951,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "l":
-                        Console.WriteLine("Edessäsi on naapurin mökki. Et voi mennä naapurin mökin seinästä läpi.");
+                        Console.WriteLine("Edessäsi on naapurin mökki. Et voi mennä naapurin mökin seinästä läpi.\n");
                         break;
 
                 }
@@ -990,14 +990,14 @@ namespace KyyhkysJussi
                     case "p":
                         if (luuOtettu)
                         {
-                            Console.WriteLine("\"Tuo on minun isosetäni reisiluu senkin torvelo!\" Huutaa luuranko ja alkaa hakata sinua kuolettavasti reisiluulla. Tunnet kuinka luu pureutuu lihaasi ja verta ja suolenpätkiä lentelee. ");
+                            Console.WriteLine("\"Tuo on minun isosetäni reisiluu senkin torvelo!\" Huutaa luuranko ja alkaa hakata sinua kuolettavasti reisiluulla. Tunnet kuinka luu pureutuu lihaasi ja verta ja suolenpätkiä lentelee.\n ");
                             GameOver();
                         }
                         TämäHuone = kartta.Huoneet[1];
                         Liikuttu();
                         break;
                     case "e":
-                        Console.WriteLine("Edessäsi on aita. Et voi mennä aidan läpi.");
+                        Console.WriteLine("Edessäsi on aita. Et voi mennä aidan läpi.\n");
                         break;
                     case "i":
                         TämäHuone = kartta.Huoneet[6];
@@ -1019,7 +1019,7 @@ namespace KyyhkysJussi
                     case "p":
                         if (luurankoTalossa == true && (sormusOtettu == true || kelloOtettu == true))
                         {
-                            Console.WriteLine("\"Lohikäärmeen perkele on käynyt taas varkaissa! Nyt saa riittää, tämä on viimeinen kerta, nyt lähden lohikäärmejahtiin\" huutaa luuranko ja lähtee ovesta.");
+                            Console.WriteLine("\"Lohikäärmeen perkele on käynyt taas varkaissa! Nyt saa riittää, tämä on viimeinen kerta, nyt lähden lohikäärmejahtiin\" huutaa luuranko ja lähtee ovesta.\n");
                             luurankoTalossa = false;
                             luurankoElossa = false;
                             // kartta.Huoneet[2].HuoneenKuvaus ="Luurangon talo on tyhjyyttä täynnä";
@@ -1081,7 +1081,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "e":
-                        Console.WriteLine("Olet oman mökkisi takapihalla, et voi mennä seinästä läpi.");
+                        Console.WriteLine("Olet oman mökkisi takapihalla, et voi mennä seinästä läpi.\n");
                         break;
                     case "i":
                         TämäHuone = kartta.Huoneet[8];
@@ -1108,7 +1108,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "e":
-                        Console.WriteLine("Kiviaidan läpi ei voi kävellä, pääsetköhän tästä jotenkin muuten?");
+                        Console.WriteLine("Kiviaidan läpi ei voi kävellä, pääsetköhän tästä jotenkin muuten\n?");
                         break;
                     case "i":
                         HaluatkoKuolla();
@@ -1127,10 +1127,10 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Et pääse aidasta läpi");
+                        Console.WriteLine("Et pääse aidasta läpi\n");
                         break;
                     case "e":
-                        Console.WriteLine("Edessäsi on leipurin mökki, et voi mennä seinästä läpi.");
+                        Console.WriteLine("Edessäsi on leipurin mökki, et voi mennä seinästä läpi.\n");
                         break;
                     case "i":
                         TämäHuone = kartta.Huoneet[10];
@@ -1157,7 +1157,7 @@ namespace KyyhkysJussi
                         Liikuttu();
                         break;
                     case "i":
-                        Console.WriteLine("Edessäsi on oman mökkisi länsiseinä, et voi mennä seinästä läpi.");
+                        Console.WriteLine("Edessäsi on oman mökkisi länsiseinä, et voi mennä seinästä läpi.\n");
                         break;
                     case "l":
                         TämäHuone = kartta.Huoneet[9];
@@ -1172,7 +1172,7 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Edessäsi on kotimökkisi pohjoisseinä. Seinässä on ikkuna, josta näet pellon täynnä rotulehmiä.");
+                        Console.WriteLine("Edessäsi on kotimökkisi pohjoisseinä. Seinässä on ikkuna, josta näet pellon täynnä rotulehmiä.\n");
                         break;
                     case "e":
                         TämäHuone = kartta.Huoneet[15];
@@ -1180,11 +1180,11 @@ namespace KyyhkysJussi
                         break;
                     case "i":
                         Console.WriteLine("Edessäsi on kotimökkisi itäseinä. Ikkunasta näet omituisen pinkinsekaisen sateenkaarenvälähdyksen ja"
-                            + " ikkunan raosta kantautuu vaimea 'Pruu pruu'-ääni");
+                            + " ikkunan raosta kantautuu vaimea 'Pruu pruu'-ääni\n");
                         break;
                     case "l":
                         Console.WriteLine("Edessäsi on kotimökkisi länsiseinä. Ikkunasta näet ruohikkoisen aukean, jonka keskellä kiemurtelee"
-                            + " pieni polku. Polun yli loikkii sammakko.");
+                            + " pieni polku. Polun yli loikkii sammakko.\n");
                         break;
                 }
             }
@@ -1194,17 +1194,17 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.\n");
                         break;;
                     case "e":
-                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.\n");
                         break;
                     case "i":
                         HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
                         break;
                     case "l":
-                        Console.WriteLine("Näet kotimökkisi itäseinän, et voi kävellä seinän läpi.");
+                        Console.WriteLine("Näet kotimökkisi itäseinän, et voi kävellä seinän läpi.\n");
                         break;
 
                 }
@@ -1215,17 +1215,17 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Edessäsi on leipurin mökin pohjoisseinä ja ikkunan takana näet pellon, jolla tallustelee fasaani.");
+                        Console.WriteLine("Edessäsi on leipurin mökin pohjoisseinä ja ikkunan takana näet pellon, jolla tallustelee fasaani.\n");
                         break;
                     case "e":
-                        Console.WriteLine("Edessäsi on leipurin mökin eteläseinä, jonka ikkunan takana roihuaa tulimeri");
+                        Console.WriteLine("Edessäsi on leipurin mökin eteläseinä, jonka ikkunan takana roihuaa tulimeri\n");
                         break;
                     case "i":
                         TämäHuone = kartta.Huoneet[14];
                         Liikuttu();
                         break;
                     case "l":
-                        Console.WriteLine("Edessäsi on leipurin mökin länsiseinä, jonka ikkunasta näet kuumana roihuavan tulimeren");
+                        Console.WriteLine("Edessäsi on leipurin mökin länsiseinä, jonka ikkunasta näet kuumana roihuavan tulimeren\n");
                         break;
 
                 }
@@ -1287,13 +1287,13 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.\n");
                         break;
                     case "e":
-                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.\n");
                         break;
                     case "i":
-                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.\n");
                         break;
                     case "l":
                         TämäHuone = kartta.Huoneet[15];
@@ -1310,7 +1310,7 @@ namespace KyyhkysJussi
             int nro = rnd.Next(1, 10);
             if (nro == 1 || nro == 2 || nro == 3)
             {
-                Console.WriteLine("Pääset puikkelehtimaan lehmien välistä!");
+                Console.WriteLine("Pääset puikkelehtimaan lehmien välistä!\n");
             }
             else
             {
@@ -1325,17 +1325,17 @@ namespace KyyhkysJussi
             string jatka = Console.ReadLine();
             if (jatka == "k")
             {
-                Console.WriteLine("Kävelit tulimereen. Liekit hyväilevät innolla ruumiisi muotoja, muuttaen karvasi tuhkaksi. Ihosi kärventyy ja mietit itseksesi, \n\"Olisin varmaan hyvänmakuinen\". Viimeisenä näkökenttäsi mustuu ja silmäsi räjähtävät kuumuudesta *poks* *ruisk*");
+                Console.WriteLine("Kävelit tulimereen. Liekit hyväilevät innolla ruumiisi muotoja, muuttaen karvasi tuhkaksi. Ihosi kärventyy ja mietit itseksesi, \n\"Olisin varmaan hyvänmakuinen\". Viimeisenä näkökenttäsi mustuu ja silmäsi räjähtävät kuumuudesta *poks* *ruisk*\n");
                 GameOver();
             }
             else if ( jatka == "e")
             {
-                Console.WriteLine("Viisas päätös. Kokeile lähteä johonkin toiseen suuntaan!");
+                Console.WriteLine("Viisas päätös. Kokeile lähteä johonkin toiseen suuntaan!\n");
                 Peli();
             }
             else
             {
-                Console.WriteLine($"Kokeileppa antaa joku järkevä vastaus");
+                Console.WriteLine($"Kokeileppa antaa joku järkevä vastaus\n");
             }
         }
 
@@ -1347,7 +1347,7 @@ namespace KyyhkysJussi
             jatka = Console.ReadLine();
             if (jatka == "k")
             {
-                Console.WriteLine("No sitten voit ajaa ohjelman uudestaan :) - Ei ehditty tehdä Dispose -metodia");
+                Console.WriteLine("No sitten voit ajaa ohjelman uudestaan :) - Ei ehditty tehdä Dispose -metodia\n");
                 //tyhjennaReppu();
                 //mattopiiskaOtettu = false;
                 //luuOtettu = false;
@@ -1375,7 +1375,7 @@ namespace KyyhkysJussi
             }
             else if (jatka == "e")
             {
-                Console.WriteLine($"Oli kiva pelata kanssasi, {UI.Pelaaja.Nimi}, toivottavasti sinullakin oli hauskaa!");
+                Console.WriteLine($"Oli kiva pelata kanssasi, {UI.Pelaaja.Nimi}, toivottavasti sinullakin oli hauskaa!\n");
                 return;
             }
             else
