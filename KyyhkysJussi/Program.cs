@@ -15,9 +15,5 @@ namespace KyyhkysJussi
             UI Peli = new UI();
             Peli.AloitaPeli();
         }
-
-        
     }
-    
-
 }

@@ -68,7 +68,7 @@ namespace KyyhkysJussi
             "Polun risteyksessä on kookkaita kiviä ja pari mäntyä. \n- Polku haarautuu, lännessäpäin on leipurin mökki. Sen piipusta puksuu vienoa sauhua tasaisena virtauksena. " +
                 "\n- Itäänpäin polulla näyttäisi kököttelevän lohikäärme haistelemassa tuulia. \n- Pohjoiseen päin polku jatkuu niitylle ja siitä eteenpäin näkymättömiin. \n- Etelän suunnalla liekkimeri.",
 
-            "Etupihallasi on lohikäärme. Se katselee mitä puuhaat. Kevyt pakokauhu paukahtelee pakaroissasi lohikäärmeen katseen alla. " +
+            "Olet mökkisi edessä. Etupihallasi on lohikäärme. Se katselee mitä puuhaat. Kevyt pakokauhu paukahtelee pakaroissasi lohikäärmeen katseen alla. " +
                 "Toivot sisimmässäsi, että muistaisit loitsun, jolla lohikäärmeen saisi muutettua mukavammaksi elukaksi. \n- Pohjoiseen päin katsahtaessasi havaitset " +
                 "tutunnäköisen mökin seinän ja kotiovesi. \n- Länteenpäin vie polku mukavahkon näköiselle niitylle. \n- Idässä häämöttävät synkät pilvet ja kivimuuri, jossa on portti. " +
                 "\n- Etelässäpäin liehuu liekkimeri, et tunne suurta vetoa sinne.\n",
