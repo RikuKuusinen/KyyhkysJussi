@@ -16,6 +16,7 @@ namespace KyyhkysJussi
         // liikkuminen, toiminnot (ota, anna, mene, sano "user input", lyö, loitsi "user input", käytä,)
         // parse - millä kaikella tunnistaa
         // help - komentojen tuki
+        
         Random rnd = new Random();
         public static Hahmo Pelaaja { get; set; }
         public bool PelaajaElossa;
@@ -156,7 +157,7 @@ namespace KyyhkysJussi
         }
         public void NimiMuutokset() // Jukka
         {
-            kartta.Huoneet[13].HuoneenKuvaus = "Sieraimiisi sulloutuvat suunnattomat sulotuoksut. Mökissä leipuriörkki Okssu vääntää torttua virne naamallaan. Okssu toteaa tomerasti, \"Terve, " + UI.Pelaaja.Nimi + "!\" Pullaa paistuu uunissa Pohjoiseen päin avautuu komia niitty, jossa näkyy jonkunlaista liikettä";
+            kartta.Huoneet[13].HuoneenKuvaus = "Sieraimiisi sulloutuvat suunnattomat sulotuoksut. \n Mökissä leipuriörkki Okssu vääntää torttua virne naamallaan. Okssu toteaa tomerasti, \n \"Terve, " + UI.Pelaaja.Nimi + "!\" Pullaa paistuu uunissa Pohjoiseen päin \n avautuu komia niitty, jossa näkyy jonkunlaista liikettä";
 
         }
         public void Liikuttu() // Jukka
@@ -182,7 +183,7 @@ namespace KyyhkysJussi
             //seurataan fasaanin liikkeitä - Jukka
             if (FasaaniPiilossa == 7)
                 {
-                    kartta.Huoneet[9].HuoneenKuvaus = "Olet niityllä ja näet ison fasaanin, joka tuijottaa sinua isoilla silmillään. Pohjoisessa näet korkean lauta-aidan. Etelässä"
+                    kartta.Huoneet[9].HuoneenKuvaus = "Olet niityllä ja näet ison fasaanin, joka tuijottaa sinua isoilla silmillään. \- Pohjoisessa näet korkean lauta-aidan. \- Etelässä"
                 + " näet leipurin talon, jonka ikkunassa leipuri naputtaa kauhalla kämmeneensä. Idässä näet ruohikkoisen aukean, jonka keskellä"
                 + " kiemurtelee polku. Lännessä loimuaa liekkimeri.";
                 }
@@ -849,11 +850,6 @@ namespace KyyhkysJussi
             }
             else if (TämäHuone == kartta.Huoneet[1])
             {
-                if (luuOtettu)
-                {
-                    Console.WriteLine("\"Tuo on minun isosetäni reisiluu senkin torvelo!\" Huutaa luuranko \nja alkaa hakata sinua kuolettavasti reisiluulla. Tunnet kuinka luu pureutuu \nlihaasi ja verta ja suolenpätkiä lentelee. ");
-                    GameOver();
-                }
                 switch (ilmansuunta)
                 {
                     case "p":
@@ -877,37 +873,7 @@ namespace KyyhkysJussi
             }
             else if (TämäHuone == kartta.Huoneet[2])
             {
-                if (luurankoTalossa == true && (sormusOtettu == true || kelloOtettu == true))
-                {
-                    Console.WriteLine("\"Lohikäärmeen perkele on käynyt taas varkaissa! Nyt saa riittää, tämä on viimeinen kerta, \nnyt lähden lohikäärmejahtiin\" huutaa luuranko ja lähtee ovesta.");
-                    luurankoTalossa = false;
-                    luurankoElossa = false;
-                   // kartta.Huoneet[2].HuoneenKuvaus ="Luurangon talo on tyhjyyttä täynnä";
-                    if (kelloOtettu == true && sormusOtettu == true)
-                    {
-                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \nIdässä on seinä, jonka ikkunasta näkyy aita ja"
-                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \nEtelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                    + " näet mattotelineen.";
-                    }
-                    else if (kelloOtettu == true && sormusOtettu == false)
-                    {
-                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \nIdässä on seinä, jonka ikkunasta näkyy aita ja"
-                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \nEtelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                    + " näet mattotelineen.\nTalon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello";
-                    }
-                    else if (kelloOtettu == false && sormusOtettu == true)
-                    {
-                        kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \nIdässä on seinä, jonka ikkunasta näkyy aita ja"
-                    + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \nEtelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
-                    + " näet mattotelineen.\nTalon sisällä näyttää olevan arvokkaita tavaroita, kuten timanttisormus";
-                    }
                 
-                    kartta.Huoneet[15].HuoneenKuvaus = "Etupihallasi on lohikäärme. Lohikäärmeen suupielestä pilkottaa luu. Se katselee mitä puuhaat. Kevyt pakokauhu paukahtelee pakaroissasi lohikäärmeen katseen alla. \n" +
-                "Toivot sisimmässäsi, että muistaisit loitsun, jolla lohikäärmeen saisi muutettua mukavammaksi elukaksi. Pohjoiseen päin katsahtaessasi havaitset \n" +
-                "tutunnäköisen mökin seinän ja kotiovesi. Länteenpäin vie polku mukavahkon näköiselle niitylle. Idässä häämöttävät synkät pilvet ja kivimuuri, jossa on portti. \n" +
-                "Etelässäpäin liehuu liekkimeri, et tunne suurta vetoa sinne.\n";
-
-                }
                 switch (ilmansuunta)
                 {
                     case "p":
@@ -986,6 +952,11 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
+                        if (luuOtettu)
+                        {
+                            Console.WriteLine("\"Tuo on minun isosetäni reisiluu senkin torvelo!\" Huutaa luuranko \nja alkaa hakata sinua kuolettavasti reisiluulla. Tunnet kuinka luu pureutuu \nlihaasi ja verta ja suolenpätkiä lentelee. ");
+                            GameOver();
+                        }
                         TämäHuone = kartta.Huoneet[1];
                         Liikuttu();
                         break;
@@ -1010,6 +981,37 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
+                        if (luurankoTalossa == true && (sormusOtettu == true || kelloOtettu == true))
+                        {
+                            Console.WriteLine("\"Lohikäärmeen perkele on käynyt taas varkaissa! Nyt saa riittää, tämä on viimeinen kerta, \nnyt lähden lohikäärmejahtiin\" huutaa luuranko ja lähtee ovesta.");
+                            luurankoTalossa = false;
+                            luurankoElossa = false;
+                            // kartta.Huoneet[2].HuoneenKuvaus ="Luurangon talo on tyhjyyttä täynnä";
+                            if (kelloOtettu == true && sormusOtettu == true)
+                            {
+                                kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \nIdässä on seinä, jonka ikkunasta näkyy aita ja"
+                            + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \nEtelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                            + " näet mattotelineen.";
+                            }
+                            else if (kelloOtettu == true && sormusOtettu == false)
+                            {
+                                kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \nIdässä on seinä, jonka ikkunasta näkyy aita ja"
+                            + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \nEtelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                            + " näet mattotelineen.\nTalon sisällä näyttää olevan arvokkaita tavaroita, kuten kultakello";
+                            }
+                            else if (kelloOtettu == false && sormusOtettu == true)
+                            {
+                                kartta.Huoneet[2].HuoneenKuvaus = "Olet naapurin mökin sisällä. Pohjoisessa on seinä, jonka ikkunasta kuultaa liekkimeri. \nIdässä on seinä, jonka ikkunasta näkyy aita ja"
+                            + " sen takana rotulehmän laikkuinen selkä ja kaarevat sarvet. \nEtelässä on auki jättämäsi ulko-ovi. Idässä on seinä, jonka ikkunasta"
+                            + " näet mattotelineen.\nTalon sisällä näyttää olevan arvokkaita tavaroita, kuten timanttisormus";
+                            }
+
+                            kartta.Huoneet[15].HuoneenKuvaus = "Etupihallasi on lohikäärme. Lohikäärmeen suupielestä pilkottaa luu. Se katselee mitä puuhaat. Kevyt pakokauhu paukahtelee pakaroissasi lohikäärmeen katseen alla. \n" +
+                        "Toivot sisimmässäsi, että muistaisit loitsun, jolla lohikäärmeen saisi muutettua mukavammaksi elukaksi. Pohjoiseen päin katsahtaessasi havaitset \n" +
+                        "tutunnäköisen mökin seinän ja kotiovesi. Länteenpäin vie polku mukavahkon näköiselle niitylle. Idässä häämöttävät synkät pilvet ja kivimuuri, jossa on portti. \n" +
+                        "Etelässäpäin liehuu liekkimeri, et tunne suurta vetoa sinne.\n";
+
+                        }
                         TämäHuone = kartta.Huoneet[2];
                         Liikuttu();
                         break;
@@ -1142,7 +1144,7 @@ namespace KyyhkysJussi
                         break;
                     case "i":
                         Console.WriteLine("Edessäsi on kotimökkisi itäseinä. Ikkunasta näet omituisen pinkinsekaisen sateenkaarenvälähdyksen ja"
-                            + " ikkunan raosta kantautuu vaimea 'Pruut pruut'-ääni");
+                            + " ikkunan raosta kantautuu vaimea 'Pruu pruu'-ääni");
                         break;
                     case "l":
                         Console.WriteLine("Edessäsi on kotimökkisi länsiseinä. Ikkunasta näet ruohikkoisen aukean, jonka keskellä kiemurtelee"
@@ -1156,17 +1158,14 @@ namespace KyyhkysJussi
                 switch (ilmansuunta)
                 {
                     case "p":
-                        TämäHuone = kartta.Huoneet[8];
-                        Liikuttu();
-                        break;
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
+                        break;;
                     case "e":
-                        TämäHuone = kartta.Huoneet[16];
-                        Liikuttu();
+                        Console.WriteLine("Edessäsi on aita, pitääköhän mennä jotain toista reittiä.");
                         break;
                     case "i":
                         HaluatkoKuolla();
                         TämäHuone = kartta.Huoneet[0];
-                       // Liikuttu();
                         break;
                     case "l":
                         Console.WriteLine("Näet kotimökkisi itäseinän, et voi kävellä seinän läpi.");
@@ -1331,6 +1330,7 @@ namespace KyyhkysJussi
                 luurankoElossa = true;
                 PelaajaElossa = true;
                 LiikuttuBool = true;
+                kartta.TeeHuoneLista();
                 TämäHuone = kartta.Huoneet[11];
                 AloitaPeli();
             }

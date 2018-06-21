@@ -8,6 +8,7 @@ namespace KyyhkysJussi
 {
     class Program
     {
+        
         public static UI Peli { get; set; }
         static void Main(string[] args)
         {
