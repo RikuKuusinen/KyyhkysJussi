@@ -620,6 +620,11 @@ NNNNN d d NNN       Nyssd
                 Console.WriteLine("Olitpa tyhmä kun löit yksisarvista! \n- Yksisarvinen tökkäsi sarvensa sinuun ja kuolit väkivaltaisen kuoleman.\n");
                 GameOver();
             }
+            else if (TämäHuone == kartta.Huoneet[9] && FasaaniPiilossa < 5 && vars[0] == "lyö")
+            {
+                Console.WriteLine("Paremman lyötävän puutteessa mäjäytät itseäsi mahaan.Hihi kutittaa\n");
+
+            }
 
             //fasaanin lyöminen - Elli / Jukka + Henni
             else if (TämäHuone == kartta.Huoneet[9] && FasaaniPiilossa >= 5 && vars[0] == "lyö")
@@ -632,11 +637,7 @@ NNNNN d d NNN       Nyssd
                 FasaaniPiilossa = 0;
 
             }
-            //else if (TämäHuone == kartta.Huoneet[9] && FasaaniPiilossa < 5 && vars[0] == "lyö")
-            //{
-            //    Console.WriteLine("Paremman lyötävän puutteessa mäjäytät itseäsi mahaan.Hihi kutittaa\n");
-                
-            //}
+
 
             // sanomiset leipuri -Elli
             else if (TämäHuone == kartta.Huoneet[13] && vars[0] == "sano")
