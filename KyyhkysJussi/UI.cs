@@ -632,11 +632,11 @@ NNNNN d d NNN       Nyssd
                 FasaaniPiilossa = 0;
 
             }
-            else if (TämäHuone == kartta.Huoneet[9] && FasaaniPiilossa < 5 && vars[0] == "lyö")
-            {
-                Console.WriteLine("Paremman lyötävän puutteessa mäjäytät itseäsi mahaan.Hihi kutittaa\n");
+            //else if (TämäHuone == kartta.Huoneet[9] && FasaaniPiilossa < 5 && vars[0] == "lyö")
+            //{
+            //    Console.WriteLine("Paremman lyötävän puutteessa mäjäytät itseäsi mahaan.Hihi kutittaa\n");
                 
-            }
+            //}
 
             // sanomiset leipuri -Elli
             else if (TämäHuone == kartta.Huoneet[13] && vars[0] == "sano")
